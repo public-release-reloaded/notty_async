@@ -1,6 +1,7 @@
-; disabled: requires internal unreleased packages
-
 (library
  (name notty_async)
  (public_name notty_async)
- (enabled_if false))
+ (libraries base async core_unix notty-community notty-community.unix)
+ (flags (:standard -w -69))
+ (preprocess
+  (pps ppx_jane)))
